@@ -1,0 +1,36 @@
+ALGORITHM count_string
+VAR
+chaine: STRING;
+nbr_char: INTEGER;
+nbr_word: INTEGER;
+nbr_voy:INTEGER
+i: INTEGER;
+    
+BEGIN 
+REPEAT
+    read(chaine)
+UNTIL (chaine[chaine.length()-1]=='.')
+nbr_char:=0;
+nbr_word:=0;
+WHILE (chaine[i]<>'.') DO
+    IF (chaine[i]<>' ') 
+     nbr_char++;
+    END_IF
+    IF (chaine[i]==' ') THEN
+        nbr_word++;
+    END_IF
+    
+    IF ( (chaine[i]=='a') or (chaine[i]=='o') or (chaine[i]=='i') or (chaine[i]=='u') or (chaine[i]=='e') or (chaine[i]=='y') or (chaine[i]=='A') or (chaine[i]=='O') or (chaine[i]=='I') or (chaine[i]=='U') or (chaine[i]=='E') or (chaine[i]=='Y')) THEN
+        nbr_voy++;
+    END_IF
+
+    i++;
+      
+
+    
+END_WHILE
+write(nbr_char);
+write(nbr_voy);
+write(nbr_word);
+
+END
